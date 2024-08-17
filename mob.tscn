@@ -63,4 +63,4 @@ speed_scale = 3.0
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_7p4lb")
 
-[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." groups=["mobs"]]
