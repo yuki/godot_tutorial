@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://byt6mlvkn8stb" path="res://art/enemyWalking_1.png" id="5_vuovb"]
 [ext_resource type="Texture2D" uid="uid://cqxq3i0jl6dww" path="res://art/enemyWalking_2.png" id="6_2yx4t"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_fhqbx"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_j0bdq"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -44,27 +44,23 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_neumw"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7p4lb"]
 radius = 36.0
 height = 102.0
 
-[node name="Node2D" type="Node2D"]
-script = ExtResource("1_j14wm")
-
-[node name="Mob" type="RigidBody2D" parent="."]
+[node name="Mob" type="RigidBody2D"]
 collision_mask = 0
 gravity_scale = 0.0
+script = ExtResource("1_j14wm")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Mob"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.75, 0.75)
-sprite_frames = SubResource("SpriteFrames_fhqbx")
-animation = &"fly"
+sprite_frames = SubResource("SpriteFrames_j0bdq")
+animation = &"walk"
 speed_scale = 3.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Mob"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 1.5708
-shape = SubResource("CapsuleShape2D_neumw")
+shape = SubResource("CapsuleShape2D_7p4lb")
 
-[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Mob"]
-
-[connection signal="screen_exited" from="Mob/VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
